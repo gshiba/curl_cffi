@@ -12,10 +12,7 @@ from .exceptions import HTTPError, RequestException
 from .headers import Headers
 
 # Use orjson if present
-try:
-    from orjson import loads
-except ImportError:
-    from json import loads
+from json import loads
 
 CHARSET_RE = re.compile(r"charset=([\w-]+)")
 STREAM_END = object()
